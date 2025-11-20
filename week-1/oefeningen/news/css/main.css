@@ -1,0 +1,57 @@
+body {
+  font-family: sans-serif;
+  height: 100%; /* vaste hoogte voor de body zodat we de news-layout kunnen laten groeien */
+}
+
+.news-layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "aside"
+    "footer";
+  gap: 0 1rem;
+}
+
+@media (min-width: 40rem) {
+  .news-layout {
+    grid-template-areas:
+      "header header header header"
+      "main main main aside"
+      "footer footer footer footer";
+  }
+
+  /* alternatief (korter) */
+  .news-layout {
+    grid-template-areas:
+      "header header"
+      "main aside"
+      "footer footer";
+    grid-template-columns: 3fr 1fr; /* hier bepalen dat eerste 3fr breed is */
+    grid-template-rows: auto 1fr auto; /* de eerste en laatste rij staan op auto zodat de middenste kan groeien */
+    min-height: 100%; /* minimum hoogte is nodig om dit element de hoogte van de browser te geven */
+  }
+}
+
+header {
+  grid-area: header;
+  padding: 2rem;
+  background-color: silver;
+}
+
+main {
+  grid-area: main;
+  padding: 2rem;
+}
+
+aside {
+  grid-area: aside;
+  padding: 2rem;
+  background-color: aqua;
+}
+
+footer {
+  grid-area: footer;
+  padding: 2rem;
+  background-color: pink;
+}
