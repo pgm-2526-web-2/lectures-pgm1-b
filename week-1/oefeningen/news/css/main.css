@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  height: 100%; /* vaste hoogte voor de body zodat we de news-layout kunnen laten groeien */
+  height: 100%;
 }
 
 .news-layout {
@@ -28,7 +28,7 @@ body {
       "main aside"
       "footer footer";
     grid-template-columns: 3fr 1fr; /* hier bepalen dat eerste 3fr breed is */
-    grid-template-rows: auto 1fr auto; /* de eerste en laatste rij staan op auto zodat de middenste kan groeien */
+    grid-template-rows: auto 1fr auto;
     min-height: 100%; /* minimum hoogte is nodig om dit element de hoogte van de browser te geven */
   }
 }

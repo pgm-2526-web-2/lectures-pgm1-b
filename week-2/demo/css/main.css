@@ -1,0 +1,26 @@
+/* 
+  white: hsl(0, 0%, 100%);
+  light: hsl(314, 33%, 92%);
+  primary: hsl(304, 90%, 26%);
+  dark: hsl(309, 50%, 5%);
+  1rem
+  1.5rem
+  2rem
+  3rem
+*/
+
+body {
+  font-family: "Archivo", sans-serif;
+}
+
+h1,
+h2,
+h3,
+.logo {
+  font-family: "Instrument Serif", serif;
+}
+
+.logo {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
