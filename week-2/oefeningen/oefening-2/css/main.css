@@ -14,12 +14,24 @@ body {
   background-image: url(../images/pexels-volkerthimm-13554138.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center;
+
   font-family: var(--font);
   color: var(--white);
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+.title {
+  font-size: var(--title);
+  font-weight: var(--bold);
+}
+
+.para {
+  font-size: var(--para);
+  letter-spacing: var(--letter-spacing);
 }
 
 .content {
@@ -36,14 +48,4 @@ body {
     --background: transparent;
     --padding: 4rem;
   }
-}
-
-.title {
-  font-size: var(--title);
-  font-weight: var(--bold);
-}
-
-.para {
-  font-size: var(--para);
-  letter-spacing: var(--letter-spacing);
 }
