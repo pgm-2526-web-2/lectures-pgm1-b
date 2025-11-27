@@ -1,26 +1,131 @@
-/* 
-  white: hsl(0, 0%, 100%);
-  light: hsl(314, 33%, 92%);
-  primary: hsl(304, 90%, 26%);
-  dark: hsl(309, 50%, 5%);
-  1rem
-  1.5rem
-  2rem
-  3rem
-*/
+:root {
+  --font-primary: "Archivo", sans-serif;
+  --font-secondary: "Instrument Serif", serif;
+
+  --regular: 500;
+  --bold: 900;
+
+  --fs-base: 1rem;
+  --fs-medium: 1.5rem;
+  --fs-large: 3rem;
+  --fs-xlarge: 6rem;
+
+  --s: 1rem;
+  --m: 2rem;
+  --l: 3rem;
+
+  --page-width: 50rem;
+
+  --white: hsl(0, 0%, 100%);
+  --light: hsl(314, 33%, 92%);
+  --primary: hsl(304, 90%, 26%);
+  --dark: hsl(309, 50%, 5%);
+
+  --page-background: var(--light);
+  --page-text: var(--dark);
+
+  --header-background: var(--dark);
+  --header-text: var(--white);
+
+  --radius: 1rem;
+  --shadow: 0 0 var(--fs-base) hsla(309, 50%, 5%, 0.2);
+}
 
 body {
-  font-family: "Archivo", sans-serif;
+  font-family: var(--font-primary);
+
+  color: var(--page-text);
+  background-color: var(--page-background);
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
 }
 
 h1,
 h2,
 h3,
 .logo {
-  font-family: "Instrument Serif", serif;
+  font-family: var(--font-secondary);
+}
+
+a {
+  color: var(--white);
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .logo {
-  font-weight: 900;
-  font-size: 1.5rem;
+  font-weight: var(--bold);
+  font-size: var(--fs-medium);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: var(--m);
+
+  color: var(--header-text);
+  background-color: var(--header-background);
+
+  & ul {
+    display: flex;
+    gap: var(--s);
+    list-style-type: none;
+  }
+}
+
+.content {
+  width: calc(100% - var(--m));
+  max-width: var(--page-width);
+  margin-inline: auto;
+  margin-block: var(--m);
+  flex-grow: 1;
+
+  & h1 {
+    font-size: var(--fs-large);
+  }
+
+  & h2 {
+    font-size: var(--fs-medium);
+    margin-bottom: var(--m);
+  }
+}
+
+.grid {
+  --columns: 1;
+
+  display: grid;
+  gap: var(--s);
+
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @media (min-width: 40rem) {
+    --columns: 2;
+  }
+
+  @media (min-width: 50rem) {
+    --columns: 3;
+  }
+}
+
+.card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.card__title {
+  padding: var(--s);
+}
+
+.footer {
+  color: var(--white);
+  background-color: var(--primary);
+  padding: var(--m);
+  text-align: center;
 }

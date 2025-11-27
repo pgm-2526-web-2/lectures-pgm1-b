@@ -1,0 +1,49 @@
+:root {
+  --font: "Zalando Sans SemiExpanded", sans-serif;
+  --white: hsl(0 0% 100%);
+  --black: hsl(0 0% 0%);
+
+  --title: 3rem;
+  --para: 1.5rem;
+  --letter-spacing: 0.5rem;
+
+  --bold: 700;
+}
+
+body {
+  background-image: url(../images/pexels-volkerthimm-13554138.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  font-family: var(--font);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.content {
+  --align: center;
+  --background: var(--black);
+  --padding: 8rem 2rem 4rem;
+
+  text-align: var(--align);
+  background-color: var(--background);
+  padding: var(--padding);
+
+  @media (min-width: 50rem) {
+    --align: right;
+    --background: transparent;
+    --padding: 4rem;
+  }
+}
+
+.title {
+  font-size: var(--title);
+  font-weight: var(--bold);
+}
+
+.para {
+  font-size: var(--para);
+  letter-spacing: var(--letter-spacing);
+}
