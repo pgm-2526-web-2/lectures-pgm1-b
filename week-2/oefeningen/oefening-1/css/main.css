@@ -1,0 +1,74 @@
+:root {
+  --highlight: hsl(39, 100%, 50%);
+
+  --spacing: 3rem;
+
+  --title: 3rem;
+  --subtitle: 2rem;
+  --base: 1.25rem;
+
+  --logo-width: 5rem;
+  --page-width: 80rem;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: var(--base);
+}
+
+.header {
+  background-color: var(--highlight);
+  display: flex;
+
+  & div {
+    width: calc(100% - var(--spacing));
+    max-width: var(--page-width);
+    margin-inline: auto;
+  }
+
+  & img {
+    width: var(--logo-width);
+  }
+}
+
+.content {
+  width: calc(100% - var(--spacing));
+  max-width: var(--page-width);
+  margin-inline: auto;
+  margin-block: var(--spacing);
+  display: grid;
+  gap: var(--spacing);
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing);
+
+  & img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+  }
+
+  & > * {
+    flex-basis: 20rem;
+    flex-grow: 1;
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.highlight {
+  color: var(--highlight);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-block: 1rem;
+}

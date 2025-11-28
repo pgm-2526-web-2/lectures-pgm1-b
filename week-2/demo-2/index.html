@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <h1>Picture/sizes/srcset demo</h1>
+    <div class="grid">
+      <div class="card">
+        <h2>Image</h2>
+        <img src="images/cat-small.webp" srcset="images/cat-small.webp 600w, images/cat-medium.webp 800w, images/cat-large.webp 1200w" sizes="(min-width: 50rem) 50vw, 100vw" alt="Kat" />
+      </div>
+      <div class="card">
+        <h2>Picture</h2>
+        <picture>
+          <source media="(min-width: 60rem)" srcset="images/dog-large.webp" />
+          <source media="(min-width: 50rem)" srcset="images/dog-medium.webp" />
+          <img src="images/dog-small.webp" alt="hond" />
+        </picture>
+      </div>
+    </div>
+  </body>
+</html>
