@@ -5,6 +5,10 @@ body {
   margin-block: 2rem;
 }
 
+h1 {
+  margin-bottom: 1rem;
+}
+
 input,
 textarea {
   width: 100%;
@@ -12,37 +16,40 @@ textarea {
   accent-color: hsl(120, 100%, 25%);
 
   &::placeholder {
-    color: red;
+    color: silver;
   }
-}
 
-textarea {
-  resize: vertical;
+  &:invalid {
+    border: 1px solid red;
+  }
 }
 
 form {
   display: grid;
   gap: 1rem;
-
-  &:has(:required) {
-    border: 1px solid red;
-  }
-
-  /* > :last-child {
-    background-color: red;
-  } */
 }
 
 .field-group {
+  --gap: 0.5rem;
+  --label: 8rem;
+
   display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: var(--gap);
 
   & > label {
-    flex-basis: 10rem;
+    flex-basis: var(--label);
   }
-}
 
-.field-group:nth-child(odd) {
-  background-color: green;
+  & > input,
+  & > textarea {
+    flex-basis: calc(100% - var(--label) - var(--gap));
+  }
+
+  & > .helptext {
+    flex-basis: calc(100% - var(--label) - var(--gap));
+  }
 }
 
 fieldset {
@@ -64,3 +71,52 @@ fieldset {
     flex-basis: 1rem;
   }
 }
+
+.helptext {
+  width: 100%;
+  flex-basis: calc(100% - 10rem);
+  color: red;
+
+  display: none;
+}
+
+input:focus:invalid {
+  outline: 2px solid hsla(0, 100%, 50%, 0.4);
+}
+
+input:invalid + .helptext {
+  display: block;
+}
+
+label:has(+ input:invalid) {
+  color: red;
+}
+
+input[type="email"]:placeholder-shown {
+  border: 2px solid purple;
+}
+
+input[type="email"]:not(:placeholder-shown) {
+  border: 2px solid blue;
+}
+
+/* 
+input[type="email"]:not(:placeholder-shown):valid {
+  border: 2px solid green;
+}
+
+label:has(+ input[type="email"]:not(:placeholder-shown):valid) {
+  color: green;
+  font-weight: bold;
+
+  &:before {
+    content: "✅";
+    width: 1ex;
+    height: 1ex;
+    margin-right: 0.5rem;
+  }
+}
+
+input[type="email"]:not(:placeholder-shown):valid:focus {
+  outline: 2px solid hsla(120, 100%, 25%, 0.3);
+} */
