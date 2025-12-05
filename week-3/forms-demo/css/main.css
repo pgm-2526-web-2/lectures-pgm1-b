@@ -1,0 +1,66 @@
+body {
+  font-family: sans-serif;
+  max-width: 40rem;
+  margin-inline: auto;
+  margin-block: 2rem;
+}
+
+input,
+textarea {
+  width: 100%;
+
+  accent-color: hsl(120, 100%, 25%);
+
+  &::placeholder {
+    color: red;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+
+  &:has(:required) {
+    border: 1px solid red;
+  }
+
+  /* > :last-child {
+    background-color: red;
+  } */
+}
+
+.field-group {
+  display: flex;
+
+  & > label {
+    flex-basis: 10rem;
+  }
+}
+
+.field-group:nth-child(odd) {
+  background-color: green;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+
+  & ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  & li {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  & input[type="radio"] {
+    flex-basis: 1rem;
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms demo</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <h1>Forms demo</h1>
+    <form action="/index.html" method="get">
+      <div class="field-group">
+        <label for="name">Naam</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="field-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="name@mail.com" />
+      </div>
+
+      <div class="field-group">
+        <label for="comment">Opmerking</label>
+        <textarea name="comment" id="comment" rows="6"></textarea>
+      </div>
+
+      <fieldset>
+        <legend>Opties</legend>
+        <ul>
+          <li>
+            <input type="radio" id="option-one" name="options" />
+            <label for="option-one">Optie 1</label>
+          </li>
+          <li>
+            <input type="radio" id="option-two" name="options" />
+            <label for="option-two">Optie 2</label>
+          </li>
+        </ul>
+      </fieldset>
+
+      <button type="submit">Versturen</button>
+    </form>
+  </body>
+</html>

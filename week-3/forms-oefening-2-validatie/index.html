@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <form action="/index.html" method="get">
+      <div class="field-group">
+        <label for="score">Geef ons een score</label>
+        <select name="score" id="score" required>
+          <option value="">-- Kies een waarde</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">0</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label for="info">Leg uit</label>
+        <textarea name="info" id="info" rows="10" placeholder="Jouw review" required></textarea>
+      </div>
+
+      <button type="submit">Versturen</button>
+    </form>
+  </body>
+</html>

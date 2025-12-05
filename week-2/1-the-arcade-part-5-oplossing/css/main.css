@@ -1,0 +1,240 @@
+/* CSS Custom Properties */
+:root {
+  /* Color palette */
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+
+  --neutral-100: hsl(0, 0%, 95%);
+  --neutral-200: hsl(0, 0%, 90%);
+  --neutral-250: hsl(0, 0%, 70%);
+  --neutral-300: hsl(0, 0%, 60%);
+  --neutral-400: hsl(0, 0%, 46%);
+  --neutral-500: hsl(0, 0%, 40%);
+  --neutral-600: hsl(0, 0%, 30%);
+  --neutral-700: hsl(0, 0%, 25%);
+  --neutral-800: hsl(0, 0%, 20%);
+  --neutral-900: hsl(0, 0%, 15%);
+  --neutral-1000: hsl(0, 0%, 10%);
+
+  --blue-300: hsl(228, 95%, 70%);
+  --blue-500: hsl(228, 95%, 59%);
+  --blue-900: hsl(228, 95%, 10%);
+
+  /* Background Colors */
+  --bg-primary: var(--neutral-100);
+  --bg-card: var(--white);
+  --bg-toggle: var(--white);
+  --bg-toggle-hover: var(--neutral-100);
+
+  /* Text Colors */
+  --text-primary: var(--black);
+  --text-secondary: var(--neutral-400);
+  --text-description: var(--neutral-500);
+  --text-footer: var(--black);
+
+  /* Border Colors */
+  --border-primary: var(--neutral-300);
+  --border-toggle: var(--neutral-200);
+  --border-description: var(--neutral-300);
+
+  /* Link Colors */
+  --link-footer: var(--neutral-300);
+  --link-footer-hover: var(--blue-500);
+  --link-footer-active: var(--blue-900);
+  --link-button: var(--black);
+  --link-button-hover-bg: var(--blue-500);
+  --link-button-hover-border: var(--blue-500);
+  --link-button-hover-text: var(--white);
+}
+
+.dark-mode {
+  /* Background Colors */
+  --bg-primary: var(--neutral-1000);
+  --bg-card: var(--neutral-900);
+  --bg-toggle: var(--neutral-800);
+  --bg-toggle-hover: var(--neutral-700);
+
+  /* Text Colors */
+  --text-primary: var(--neutral-200);
+  --text-secondary: var(--neutral-300);
+  --text-description: var(--neutral-250);
+  --text-footer: var(--neutral-250);
+
+  /* Border Colors */
+  --border-primary: var(--neutral-600);
+  --border-toggle: var(--neutral-500);
+  --border-description: var(--neutral-600);
+
+  /* Link Colors */
+  --link-footer: var(--neutral-300);
+  --link-footer-hover: var(--blue-500);
+  --link-footer-active: var(--blue-300);
+  --link-button: var(--neutral-200);
+  --link-button-hover-bg: var(--blue-500);
+  --link-button-hover-border: var(--blue-500);
+  --link-button-hover-text: var(--white);
+}
+
+/* Start hieronder je CSS regels */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.container {
+  width: 90%;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+/* Introduction */
+.introduction {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4.5rem;
+  margin-bottom: 3.5rem;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.06rem;
+}
+
+.introduction p {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--text-secondary);
+}
+
+/* Footer */
+.footer {
+  margin: 3rem auto 6rem;
+  padding-bottom: 1rem;
+  max-width: 30rem;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 150%;
+  color: var(--text-footer);
+}
+
+.footer a {
+  color: var(--link-footer);
+}
+
+.footer a:hover {
+  text-decoration: none;
+  color: var(--link-footer-hover);
+}
+
+.footer a:active {
+  color: var(--link-footer-active);
+}
+
+/* Games */
+.games {
+  list-style-type: none;
+  display: grid;
+  gap: 1.5rem;
+  padding-left: 0;
+
+  @media (min-width: 40rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 70rem) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.game {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 2rem;
+  padding: 3rem;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.game img {
+  width: 100%;
+  border-radius: 1.3rem;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.game h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 110%;
+  margin: 2rem 0 2rem 0;
+}
+
+.description {
+  margin: 2rem 0;
+  padding: 1rem 0;
+  border-top: 1px dashed var(--border-description);
+  border-bottom: 1px dashed var(--border-description);
+  color: var(--text-description);
+}
+
+.game a {
+  display: inline-block;
+  border: 1px solid var(--border-primary);
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: var(--link-button);
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 2rem;
+}
+
+/* extra */
+
+.game a:hover {
+  background: var(--link-button-hover-bg);
+  border-color: var(--link-button-hover-border);
+  color: var(--link-button-hover-text);
+  transition: 0.2s;
+}
+
+.game a:active {
+  transform: translateY(2px);
+  transition: none;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background-color: var(--bg-toggle);
+  border: 2px solid var(--border-toggle);
+  border-radius: 2rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-toggle-hover);
+  transform: scale(1.05);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
