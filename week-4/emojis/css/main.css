@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+  max-width: 60rem;
+  margin: 2rem auto;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  list-style-type: none;
+  padding-left: 0;
+  gap: 1rem;
+}
+
+li {
+  background-color: hsl(0, 0%, 90%);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
