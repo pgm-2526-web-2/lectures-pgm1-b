@@ -1,0 +1,156 @@
+/* .player-hero__bio{
+    overflow: hidden;
+}
+
+.player-hero__photo__image{
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(10px) rotate(3deg);
+    }
+    50% {
+        transform: translateY(20px) rotate(6deg);
+    }
+    75% {
+        transform: translateY(10px) rotate(3deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+} */
+
+.stat-card {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.stat-card:hover {
+  background-color: #f4f7ff;
+  transform: scale(1.03);
+}
+
+/* ============================================================
+   OEFENING 1 — TRANSITION (Makkelijk)
+   Doel: zachte hover met color + scale transition op stat-card
+=============================================================== */
+.stat-card {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.stat-card:hover {
+  background-color: #f4f7ff;
+  transform: scale(1.03);
+}
+
+
+
+/* ============================================================
+   OEFENING 2 — TRANSITION (Uitdaging)
+   Doel: image-zoom + overlay effect op spelerfoto (professioneel)
+=============================================================== */
+
+/* Container moet overflow hidden hebben voor de zoom */
+.player-hero__photo {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Zoom effect */
+.player-hero__photo__image {
+  transition: transform 0.5s ease;
+}
+
+.player-hero__photo:hover .player-hero__photo__image {
+  transform: scale(1.1);
+  filter: drop-shadow(5px 5px 5px black) 
+          drop-shadow(-5px -5px 5px black);
+}
+
+/* ============================================================
+   OEFENING 3 — TRANSFORM (Makkelijk)
+   Doel: menu items bewegen licht omhoog bij hover
+=============================================================== */
+.site-header__link {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.site-header__link:hover {
+  transform: translateY(-3px);
+}
+
+
+
+/* ============================================================
+   OEFENING 4 — TRANSFORM (Uitdaging)
+   Doel: 3D tilt effect voor stat-cards (moderne dashboards)
+=============================================================== */
+.stat-card {
+  transition: transform 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.stat-card:hover {
+  transform: rotateY(12deg) rotateX(4deg);
+}
+
+
+
+/* ============================================================
+   OEFENING 5 — ANIMATION (Makkelijk)
+   Doel: details laten "vanonder vallen" (snelle drop + bounce)
+=============================================================== */
+.player-hero__details {
+  animation: dropIn 0.7s ease-out both;
+}
+
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(120px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1);
+  }
+  80% {
+    transform: translateY(4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+/* ============================================================
+   OEFENING 6 — ANIMATION (Uitdaging)
+   Doel: staggered stats-cards animatie zoals in sport dashbaords
+=============================================================== */
+.player-stats__col {
+  opacity: 0;
+  animation: slideIn 0.6s ease forwards;
+}
+
+/* Cards komen 1 voor 1 binnen */
+.player-stats__col:nth-child(1) { animation-delay: 0.1s; }
+.player-stats__col:nth-child(2) { animation-delay: 0.2s; }
+.player-stats__col:nth-child(3) { animation-delay: 0.3s; }
+.player-stats__col:nth-child(4) { animation-delay: 0.4s; }
+.player-stats__col:nth-child(5) { animation-delay: 0.5s; }
+.player-stats__col:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

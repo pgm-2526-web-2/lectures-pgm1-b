@@ -1,0 +1,81 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  transform-style: preserve-3d;
+}
+
+.box {
+  width: 5rem;
+  height: 5rem;
+  background-color: hsl(0, 0%, 75%);
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(20deg) rotateZ(45deg);
+
+  animation: rotate 20s linear infinite;
+
+  &::before,
+  &::after {
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    background-color: hsl(0, 0%, 67%);
+    transform-origin: bottom left;
+    rotate: y 90deg;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    background-color: hsl(0, 0%, 50%);
+    transform-origin: bottom right;
+    rotate: y -90deg;
+  }
+}
+
+.box__inner {
+  width: 5rem;
+  height: 5rem;
+  background-color: hsl(0, 0%, 39%);
+  position: relative;
+  transform-style: preserve-3d;
+  translate: 0 0 -5rem;
+  position: absolute;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    background-color: hsl(0, 0%, 66%);
+    transform-origin: top right;
+    rotate: x 90deg;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    background-color: hsl(0, 0%, 29%);
+    transform-origin: top left;
+    rotate: x 90deg;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotateX(calc(20deg + 1turn)) rotateZ(calc(45deg + 1turn));
+  }
+}

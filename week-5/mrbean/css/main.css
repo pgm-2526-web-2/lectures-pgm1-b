@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+a {
+  color: blue;
+  margin-bottom: 2rem;
+  transition: color 0.15s ease-in, background-color 0.3s ease-in;
+}
+
+a:hover {
+  color: green;
+  background-color: yellow;
+}
+
+.bean {
+  overflow: hidden;
+  position: relative;
+}
+
+.bean__background {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.bean__hover {
+  position: absolute;
+  width: 100%;
+  top: 80%;
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.bean:hover .bean__hover {
+  transform: translateY(-50%);
+}

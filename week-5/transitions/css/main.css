@@ -1,0 +1,38 @@
+body {
+  font-family: sans-serif;
+}
+
+.nav-list {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 3rem;
+}
+
+.nav-link {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: black;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 1rem;
+    width: calc(100% - 2rem);
+    transform: scaleX(0);
+    transform-origin: left center;
+    height: 2px;
+    background-color: black;
+    transition: transform 0.3s ease-in;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}

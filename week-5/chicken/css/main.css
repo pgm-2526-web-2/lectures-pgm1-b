@@ -1,0 +1,189 @@
+body {
+  background-color: #333333;
+}
+
+.chicken {
+  --red: #ff5e5b;
+  --white: #ffffff;
+  --orange: #ff945b;
+
+  font-size: min(3vw, 3vh);
+  top: 50%;
+  left: 50%;
+
+  transform-style: preserve-3d;
+  transform-origin: 3em 2em;
+  transform: rotateX(65deg) rotateZ(45deg);
+  animation: chicken 5s linear infinite;
+}
+
+@keyframes chicken {
+  to {
+    transform: rotateX(65deg) rotateZ(calc(45deg + 1turn));
+  }
+}
+
+.chicken,
+.chicken div,
+.chicken div::before,
+.chicken div::after {
+  content: "";
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+/* basic smart cube ---> */
+.cube {
+  width: var(--x);
+  height: var(--y);
+  background-color: color-mix(in srgb, var(--color) 50%, #333333);
+}
+.cube::before {
+  width: 100%;
+  height: var(--z);
+  background-color: color-mix(in srgb, var(--color) 70%, #333333);
+  transform-origin: top center;
+  rotate: x 90deg;
+}
+.cube::after {
+  width: 100%;
+  height: var(--z);
+  background-color: color-mix(in srgb, var(--color) 90%, white);
+  translate: 0 var(--y);
+  transform-origin: top center;
+  rotate: x 90deg;
+}
+.cube > div {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color);
+  translate: 0 0 var(--z);
+}
+.cube > div::before {
+  width: var(--z);
+  height: 100%;
+  background-color: color-mix(in srgb, var(--color) 90%, #333333);
+  transform-origin: left center;
+  rotate: y 90deg;
+}
+.cube > div::after {
+  width: var(--z);
+  height: 100%;
+  background-color: color-mix(in srgb, var(--color) 90%, #333333);
+  transform-origin: left center;
+  rotate: y 90deg;
+  translate: var(--x);
+}
+/* <--- basic smart cube */
+
+.chicken__head {
+  --x: 6em;
+  --y: 7em;
+  --z: 8em;
+  --color: var(--white);
+}
+.chicken__head > div::before,
+.chicken__head > div::after {
+  background-image: linear-gradient(black, black);
+  background-position: 2em 4em;
+  background-size: 1em 1em;
+  background-repeat: no-repeat;
+}
+
+.chicken__beak {
+  --x: 2em;
+  --y: 3em;
+  --z: 2em;
+  translate: 2em 7em 4em;
+  --color: var(--orange);
+}
+
+.chicken__wattle {
+  --x: 2em;
+  --y: 2em;
+  --z: 2em;
+  translate: 2em 7em 2em;
+  --color: var(--red);
+}
+
+.chicken__comb {
+  --x: 2em;
+  --y: 4em;
+  --z: 2em;
+  translate: 2em 2em 8em;
+  --color: var(--red);
+}
+
+.chicken__body {
+  --x: 6em;
+  --y: 10em;
+  --z: 5em;
+  translate: 0em -3em -5em;
+  --color: var(--white);
+}
+
+.chicken__tail {
+  --x: 4em;
+  --y: 2em;
+  --z: 5em;
+  translate: 1em -5em -5em;
+  --color: var(--white);
+}
+
+.chicken__wing {
+  --x: 2em;
+  --y: 6em;
+  --z: 3em;
+  --color: var(--white);
+}
+.chicken__wing-left {
+  translate: -2em 0em -4em;
+}
+.chicken__wing-right {
+  translate: 6em 0em -4em;
+}
+
+.chicken__knee {
+  --x: 1em;
+  --y: 1em;
+  --z: 3em;
+  --color: var(--orange);
+}
+.chicken__knee-right {
+  translate: 5em 2em -8em;
+}
+.chicken__knee-left {
+  translate: 0em 2em -8em;
+}
+
+.chicken__foot {
+  --x: 3em;
+  --y: 3em;
+  --z: 1em;
+  --color: var(--orange);
+}
+.chicken__foot-right {
+  translate: 4em 1em -9em;
+}
+.chicken__foot-left {
+  translate: -1em 1em -9em;
+}
+
+.chicken__finger {
+  --x: 1em;
+  --y: 2em;
+  --z: 1em;
+  --color: var(--orange);
+}
+.chicken__finger-one {
+  translate: -1em 4em -9em;
+}
+.chicken__finger-two {
+  translate: 1em 4em -9em;
+}
+.chicken__finger-three {
+  translate: 4em 4em -9em;
+}
+.chicken__finger-four {
+  translate: 6em 4em -9em;
+}

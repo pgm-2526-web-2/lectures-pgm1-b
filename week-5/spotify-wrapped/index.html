@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+    <title>My Spotify Wrapped</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1>My Spotify wrapped</h1>
+      </div>
+    </header>
+
+    <main>
+      <section class="albums">
+        <div class="container">
+          <h2 class="section-header">Your most played albums</h2>
+          <div class="albums__wrapper">
+            <article class="album">
+              <div class="album__media">
+                <img src="images/dawson.jpg" alt="Album cover of Magdale by Fka Twigs" class="album__cover" />
+                <img src="images/vinyl.png" alt="a vinyl" class="album__vinyl" />
+              </div>
+              <div class="album__info">
+                <h3 class="album__title">End of the Middle</h3>
+                <p class="album__artist">Richard Dawson</p>
+              </div>
+            </article>
+
+            <article class="album">
+              <div class="album__media">
+                <img src="images/ghekiere.jpg" alt="Album cover of Magdale by Fka Twigs" class="album__cover" />
+                <img src="images/vinyl.png" alt="a vinyl" class="album__vinyl" />
+              </div>
+              <div class="album__info">
+                <h3 class="album__title">In de verte, dit uitzicht</h3>
+                <p class="album__artist">Abel Ghekiere</p>
+              </div>
+            </article>
+
+            <article class="album">
+              <div class="album__media">
+                <img src="images/milan.jpg" alt="Album cover of Magdale by Fka Twigs" class="album__cover" />
+                <img src="images/vinyl.png" alt="a vinyl" class="album__vinyl" />
+              </div>
+              <div class="album__info">
+                <h3 class="album__title">Leave another day</h3>
+                <p class="album__artist">Milan W</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="track">
+        <div class="container">
+          <h2 class="section-header">Your favourite track</h2>
+          <div class="track__wrapper">
+            <div class="track__media">
+              <img src="images/vinyl.png" alt="a vinyl" class="track__vinyl" />
+              <img src="images/dawson.jpg" alt="track__cover" class="track__cover" />
+            </div>
+            <iframe data-testid="embed-iframe" style="border-radius: 12px" src="https://open.spotify.com/embed/track/4zND6NKoMq9ZkjvDAHAgqH?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="embed"></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">&copy; 2025 <br />Spotify wrapped is a concept created by Spotify</div>
+    </footer>
+  </body>
+</html>
