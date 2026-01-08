@@ -1,0 +1,34 @@
+body {
+  font-family: sans-serif;
+  max-width: 50rem;
+  margin-inline: auto;
+  margin-block: 2rem;
+}
+
+header {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid silver;
+
+  & ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  & a {
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+}
+
+main {
+  text-align: center;
+}
